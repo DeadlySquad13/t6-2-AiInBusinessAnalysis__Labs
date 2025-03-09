@@ -31,3 +31,13 @@ run:
 
 rm-all-containers:
 	docker rm $(docker ps --quiet --all)
+
+# # Apache Superset specific.
+prepare-superset:
+	git submodule update --init --recursive -- ./Apache__Superset
+
+pull-superset: prepare-superset
+	docker compose -f ./Apache__Superset/docker-compose-non-dev.yml pull
+
+up-superset:
+	docker compose -f ./Apache__Superset/docker-compose-non-dev.yml up

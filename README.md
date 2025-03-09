@@ -1,7 +1,13 @@
 # AI in Business Analysis
 ## Apache Superset
-Run ``
+Run:
+```bash
+make prepare-superset
+make up-superset
+```
+
 Go to [localhost](http://localhost:8088).
+
 Default credentials:
 
 | login | password |
